@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "university"
+    }
+  },
+  "defaultProject": "university",
+  "cli": {
+    "analytics": "7a631208-f46a-4ba4-af85-91bb8657958a"
+  }
 }

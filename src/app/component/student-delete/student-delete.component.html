@@ -1,0 +1,49 @@
+<div class="container">
+    <h2>Delete Student</h2>
+
+    <div class="form-row" *ngIf="!showMsg">
+        <div class="alert alert-danger col-md-12" role="alert">
+            Are You Sure?
+            <br>
+            <div class="btn-group" role="group">
+                <button class="btn btn-outline-danger btn-sm" (click)="delete()">Delete</button>
+                <a class="btn btn-outline-danger btn-sm" [routerLink]="[ '/student-list' ]">Back</a>
+            </div>
+        </div>
+    </div>
+    <div class="form-row" *ngIf="showMsg">
+        <div class="alert alert-{{type}} col-md-12" role="alert">
+            {{msg}}
+            <br>
+            <a class="btn btn-outline-danger btn-sm" [routerLink]="[ '/student-list' ]">Back</a>
+        </div>
+    </div>
+   <form #studentForm="ngForm" *ngIf="student">
+
+      <div class="form-row">
+          <div class="col-md-4">
+             <label>ID:</label>
+                <input type="number" id="ID" name="ID" placeholder="Enter ther  ID" class="form-control"
+                   #studentID[(ngModel)]="student.ID">
+           </div>
+     <div class="col-md-4">
+            <label>LastName:</label>
+            <input type="text" id="Title" name="Title" placeholder="Enter ther Title" class="form-control"
+                [(ngModel)]="student.LastName">
+        </div>
+        <div class="col-md-4">
+            <label>FirstMidName:</label>
+            <input type="text" id="FirstMidName" name="FirstMidName" placeholder="Enter ther FirstMidName"
+                class="form-control" [(ngModel)]="student.FirstMidName">
+        </div>
+        <div class="col-md-4">
+            <label>EnrollmentDate:</label>
+            <input type="Date" id="EnrollmentDate" name="EnrollmentDate" placeholder="Enter ther EnrollmentDate"
+                class="form-control" [(ngModel)]="student.EnrollmentDate">
+            </div>
+
+         </div>
+
+     </form>
+
+</div>
